@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Models="clr-namespace:SumaAppMvvm.Models"
+             xmlns:ViewModels="clr-namespace:SumaAppMvvm.ViewModels"
+             x:Class="SumaAppMvvm.MainPage"
+             Title="{x:Static Models:FaBrandsIconds.Plus}"
+             BackgroundColor="White"
+             >
+
+
+
+    <ContentPage.BindingContext>
+        <ViewModels:MainPageViewModels/>
+    </ContentPage.BindingContext>
+    <ScrollView>
+
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Label
+                Text="Ingrese el valor del primer número:"
+                FontSize="20"
+                Padding="20"
+                TextColor="#000000"
+               />
+            <Entry
+                Text="{Binding Valor1}"
+                Keyboard="Numeric"
+                Margin="20"
+                BackgroundColor="#198754"
+                
+                />
+            <Label 
+                Text="Ingrese el valor del segundo número:"
+                FontSize="20"
+                Padding="20"
+                TextColor="#000000"
+                />
+
+            <Entry
+                  Text="{Binding Valor2}"
+                  Keyboard="Numeric"
+                  Margin="20"
+                  BackgroundColor="#198754"
+                />
+
+            <Label
+                Text="Resultado:"
+                FontSize="20"
+                Padding="20"
+                TextColor="#000000"
+                />
+            <Entry
+                  Text="{Binding Resultado}"
+                  Keyboard="Numeric"
+                  Margin="20"
+                  BackgroundColor="#198795"
+                IsReadOnly="True"
+                />
+
+            <Button
+                x:Name="BtnSumar"
+                Text="Calcular " 
+                Command="{Binding SumarValoresCommand}"
+                BackgroundColor="#198754"
+                Margin="20"
+                TextColor="White"
+                FontSize="Medium"
+                 />
+            <Button
+                x:Name="BtnLimpiar"
+                Text="Limpiar " 
+                Command="{Binding LimpiarCommand}"
+                BackgroundColor="#000000"
+                Margin="20"
+                TextColor="White"
+                FontSize="Medium"
+          />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
